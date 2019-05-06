@@ -5,7 +5,7 @@
 #include <FirebaseArduino.h>
 
 #define FIREBASE_HOST "e-water-c7960.firebaseio.com"
-#define FIREBASE_AUTH "1AI8CBnuuNaEaRkK2I4WoBqs4rmdJWbMm6IF3Upe"
+#define FIREBASE_AUTH "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 #define WIFI_SSID "ewater" //ewater
 #define WIFI_PASSWORD "87654321" //87654321
 
@@ -121,6 +121,7 @@ void loop(){
   Serial.println("%");
 
   // flashing led when system is ready for watering
+  // glastra1/e_water/lowLevel is the path on firebase database
   if (value < Firebase.getInt("glastra1/e_water/lowLevel")) {  // enable watering if it's below 
       (flash == 0) ? (flash=1) : (flash=0);
       digitalWrite(LED,flash);
